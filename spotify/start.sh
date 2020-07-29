@@ -32,4 +32,4 @@ if [[ -z $DISABLE_MULTI_ROOM ]] && ! [[ $BALENA_DEVICE_TYPE == "raspberry-pi" ||
 fi
 
 # Start raspotify
-exec /usr/bin/librespot --name "$DEVICE_NAME" $SPOTIFY_BACKEND --bitrate 320 --cache /var/cache/raspotify --enable-volume-normalisation --linear-volume --initial-volume=$SYSTEM_OUTPUT_VOLUME $SPOTIFY_CREDENTIALS $SPOTIFY_DEVICE
+exec /usr/bin/librespot --name "$DEVICE_NAME" $SPOTIFY_BACKEND --bitrate 320 --cache /var/cache/raspotify --enable-volume-normalisation --linear-volume --initial-volume=$SYSTEM_OUTPUT_VOLUME --username "$SPOTIFY_LOGIN" --password "$SPOTIFY_PASSWORD" $SPOTIFY_DEVICE
