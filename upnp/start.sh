@@ -10,6 +10,11 @@ if [[ -z $DISABLE_MULTI_ROOM ]] && [[ $CLIENT_ONLY_MULTI_ROOM == "1" ]]; then
   exit 0
 fi
 
+#Exit service if DISABLE_UPNP is enabled
+if [[ $DISABLE_UPNP == "1" ]]; then
+  exit 0
+fi
+
 if [[ -z "$DEVICE_NAME" ]]; then
   DEVICE_NAME=$(printf "balenaSound UPnP %s" $(hostname | cut -c -4))
 fi
