@@ -10,6 +10,11 @@ if [[ -z $DISABLE_MULTI_ROOM ]] && [[ $CLIENT_ONLY_MULTI_ROOM == "1" ]]; then
   exit 0
 fi
 
+#Exit service if DISABLE_BLUETOOTH is enabled
+if [[ $DISABLE_BLUETOOTH == "1" ]]; then
+  exit 0
+fi
+
 if [[ -z "$DEVICE_NAME" ]]; then
    if [[ "$BLUETOOTH_DEVICE_NAME" ]]; then
      DEVICE_NAME="$BLUETOOTH_DEVICE_NAME"
