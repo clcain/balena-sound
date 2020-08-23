@@ -12,4 +12,4 @@ if [[ -z $DISABLE_MULTI_ROOM ]] && [[ -z $CLIENT_ONLY_MULTI_ROOM ]] && ! [[ $BAL
 fi
 
 # Start AirPlay
-exec shairport-sync -a "$DEVICE_NAME" $SHAIRPORT_BACKEND | printf "Device is discoverable as \"%s\"\n" "$DEVICE_NAME"
+exec shairport-sync -a "$DEVICE_NAME" -v $SHAIRPORT_BACKEND | printf "Device is discoverable as \"%s\"\n" "$DEVICE_NAME"
